@@ -13,9 +13,13 @@ const MainCarousel = () => {
       alt=""
     />
   ));
-
+git
   return (
-    <AliceCarousel mouseTracking items={items} controlsStrategy="alternate" />
+    <AliceCarousel mouseTracking items={items} 
+    disableButtonsControls
+    autoPlay
+    autoPlayInterval={2000} 
+    infinite/>
   );
 };
 
