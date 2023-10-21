@@ -349,12 +349,16 @@ export default function Navigation() {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
-                  <img className="h-12 w-auto" src={logo} alt="" />
+                  <img
+                    className="h-12 max-sm:h-5  w-auto  "
+                    src={logo}
+                    alt=""
+                  />
                 </a>
               </div>
 
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <Popover.Group className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
