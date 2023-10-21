@@ -13,13 +13,15 @@ const MainCarousel = () => {
       alt=""
     />
   ));
-git
   return (
-    <AliceCarousel mouseTracking items={items} 
-    disableButtonsControls
-    autoPlay
-    autoPlayInterval={2000} 
-    infinite/>
+    <AliceCarousel
+      mouseTracking
+      items={items}
+      disableButtonsControls
+      autoPlay
+      autoPlayInterval={2000}
+      infinite
+    />
   );
 };
 
