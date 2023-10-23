@@ -350,7 +350,7 @@ export default function Navigation() {
                 <a href="#">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-12 max-sm:h-5  w-auto  "
+                    className="h-12 max-sm:h-7  w-auto  "
                     src={logo}
                     alt=""
                   />

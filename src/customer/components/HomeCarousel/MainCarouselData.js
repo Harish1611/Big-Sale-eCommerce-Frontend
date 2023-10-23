@@ -1,21 +1,37 @@
 export const mainCarouselData = [
   {
-    image:
-      "https://4.imimg.com/data4/HM/WC/MY-17233451/img-20160408-wa0021.jpg",
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider4.jpg",
     path: "/women/clothing/lengha_choli",
   },
   {
-    image: "https://4.imimg.com/data4/GC/DR/MY-6408422/img-20160408-wa0025.jpg",
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider3.jpg",
     path: "/women/clothing/lengha_choli",
   },
   {
-    image:
-      "https://4.imimg.com/data4/BA/OO/MY-6408422/exclusive-designer-chanderi-suit.jpg",
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider8.jpg",
     path: "/women/clothing/lengha_choli",
   },
   {
-    image:
-      "https://4.imimg.com/data4/YW/WA/MY-17233451/img-20160408-wa0023.jpg",
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider1.jpg",
+    path: "/women/clothing/lengha_choli",
+  },
+];
+
+export const secundaryCarouselData = [
+  {
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider5.jpg",
+    path: "/women/clothing/lengha_choli",
+  },
+  {
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider6.jpg",
+    path: "/women/clothing/lengha_choli",
+  },
+  {
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider2.jpg",
+    path: "/women/clothing/lengha_choli",
+  },
+  {
+    image: "http://zen2web.com/wp-content/uploads/2023/10/slider7.jpg",
     path: "/women/clothing/lengha_choli",
   },
 ];
