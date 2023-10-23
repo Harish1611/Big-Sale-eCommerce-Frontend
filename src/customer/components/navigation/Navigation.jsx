@@ -325,7 +325,7 @@ export default function Navigation() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-black px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+        <p className="flex h-10 items-center justify-center bg-gradient-to-r from-[#00172D] via-[#02386E] to-[#00264D] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           <ScrollText />
         </p>
 
