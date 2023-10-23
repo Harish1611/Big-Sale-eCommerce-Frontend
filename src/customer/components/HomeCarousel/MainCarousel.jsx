@@ -7,7 +7,7 @@ const MainCarousel = () => {
   const items = mainCarouselData.map((item) => (
     <img
       className="cursor-pointer"
-      style={{ objectFit: "cover" }}
+      style={{ width: "100%", objectFit: "cover" }}
       role="presentation"
       src={item.image}
       alt=""
