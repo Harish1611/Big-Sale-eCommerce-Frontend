@@ -1,24 +1,17 @@
 import React from "react";
 
-// import { useNavigate } from "react-router-dom";
-
 const HomeCollectionCard = ({ product }) => {
-  // const navigate = useNavigate();
-
   return (
-    <div
-      // onClick={() => navigate(`/men/clothing/mens_kurta`)}
-      className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3"
-    >
-      <div className="h-[13rem] w-[10rem]">
+    <div className="cursor-pointer flex flex-col items-center bg-white rounded-md shadow-lg overflow-hidden w-[15rem] m-4 z-10">
+      <div className="h-[15rem] w-full">
         <img
-          className="object-cover object-top w-full h-full"
+          className="object-cover object-top w-full h-full z-0 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-105 hover: duration-300"
           src={product?.image || product?.imageUrl}
           alt={product?.title}
         />
       </div>
 
-      <div className="p-4 ">
+      <div className="p-4 z-20 ">
         <h3 className="text-lg font-medium text-gray-900">
           {product?.brand || product?.title}
         </h3>
