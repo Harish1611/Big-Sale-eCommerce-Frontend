@@ -24,10 +24,10 @@ const HomeCollectionSection = ({ section, data }) => {
   ));
 
   return (
-    <div className="relative px-4 sm:px-6 lg:px-8 ">
+    <div className="relative px-8 sm:px-6 lg:px-8  ">
       <h2 className="text-2xl font-extrabold text-gray-600 py-5">{section}</h2>
       <hr className="text-black bg-black w-20 h-[3px] mb-6"></hr>
-      <div className="relative border p-5">
+      <div className="relative  p-5 ">
         <AliceCarousel
           disableDotsControls
           mouseTracking
