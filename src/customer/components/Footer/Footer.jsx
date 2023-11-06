@@ -13,7 +13,7 @@ const Footer = () => {
       >
         <Grid item xs={12} sm={6} md={3}>
           <img src={logo} alt="logo" className="h-15 px-20" />
-          <p className="text-slate-500">Explore, Admire & Purchase</p>
+          <p className="text-slate-500 pb-10">Explore, Admire & Purchase</p>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6" gutterBottom>
