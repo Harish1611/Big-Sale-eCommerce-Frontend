@@ -6,7 +6,6 @@ function App() {
     <div>
       <Navigation />
       <HomePage />
-      <h1> Big Sale - eCommerce </h1>
     </div>
   );
 }
