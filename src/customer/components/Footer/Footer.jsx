@@ -71,7 +71,7 @@ const Footer = () => {
           </Typography>
         </Grid>
       </Grid>
-      <hr className=" h-[2px]"></hr>
+      <hr></hr>
       <Grid
         className="bg-black text-white  text-center"
         container
