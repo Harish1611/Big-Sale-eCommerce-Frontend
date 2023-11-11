@@ -16,3 +16,4 @@ Big Sale - eCommerce Frontend is the frontend of an e-commerce web application b
 - ReactJS
 - NodeJS
 - ExpressJS
+- TailWind 
