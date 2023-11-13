@@ -13,6 +13,10 @@ const HomePage = () => {
       <HomeBanner image={firstBanner} />
       <HomeCollectionSection data={mens_kurta} section={"Best Sellers"} />
       <HomeAnouncement />
+      <HomeBanner image={firstBanner} />
+      <HomeCollectionSection data={mens_kurta} section={"Mens Ware"} />
+
+
       <Footer />
     </div>
   );
