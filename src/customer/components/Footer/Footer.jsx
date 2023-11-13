@@ -13,60 +13,60 @@ const Footer = () => {
       >
         <Grid item xs={12} sm={6} md={3}>
           <img src={logo} alt="logo" className="h-15 px-20" />
-          <p className="text-slate-500 pb-10">Explore, Admire & Purchase</p>
+          <p className="text-slate-300 pb-10">Explore, Admire & Purchase</p>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <Typography className="pb-5 text-slate-300" variant="h6" gutterBottom>
             Company
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             About
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Blog
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Jobs
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Press
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Partners
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <Typography className="pb-5 text-slate-300"  variant="h6" gutterBottom>
             Solutions
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Marketing
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Analytics
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Commerce
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Insights
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Support
           </Typography>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <Typography className="pb-5 text-slate-300"  variant="h6" gutterBottom>
             Legal
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Claim
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Privacy
           </Typography>
-          <Typography variant="body2" component="p" gutterBottom>
+          <Typography variant="body2" className="pb-2 text-gray-500 hover:text-gray-100 cursor-pointer" component="p" gutterBottom>
             Terms
           </Typography>
         </Grid>
@@ -90,10 +90,10 @@ const Footer = () => {
               href="https://portfolio-website-react-eta.vercel.app/"
               color="inherit"
               underline="always"
-              style={{ color: "blue" }}
+              style={{textDecoration:"none"}}
+             
             >
-              {" "}
-              Harish N Bonam
+              <span  className="text-slate-100 bg-blue-950 px-3 py-2 m-1 rounded-md" > Harish N Bonam </span>
             </Link>
           </Typography>
         </Grid>
