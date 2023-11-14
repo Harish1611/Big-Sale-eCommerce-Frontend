@@ -3,6 +3,8 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import ProductCard from './ProductCard';
+import { mens_kurta } from '../../../Data/Mens_Kurtha';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -234,7 +236,7 @@ export default function Product() {
               Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
               {/* Filters */}
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
@@ -291,7 +293,11 @@ export default function Product() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3">{/* Your content */}</div>
+              <div className="lg:col-span-4 w-full">
+                <div className='flex flex-wrap justify-center bg-white py-5'>
+                    {mens_kurta.map((item) => <ProductCard />)}
+                </div>
+              </div>
             </div>
           </section>
         </main>
