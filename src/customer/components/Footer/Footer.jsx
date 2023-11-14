@@ -79,12 +79,12 @@ const Footer = () => {
         sx={{ bgcolor: "black", color: "white", py: 3 }}
       >
         <Grid item xs={12} sm={12} md={6}>
-          <Typography variant="body2" component="p" align="center">
+          <Typography variant="body2" component="p" align="center" className="pt-2 sm:pt-0">
             &copy; 2023 Big Sale | All rights reserved.
           </Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
-          <Typography variant="body2" component="p" align="center">
+          <Typography variant="body2" component="p" align="center" className="pt-4 sm:pt-0">
             Site Designed & Developed By
             <Link
               href="https://portfolio-website-react-eta.vercel.app/"
