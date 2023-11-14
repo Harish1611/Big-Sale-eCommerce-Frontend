@@ -295,7 +295,7 @@ export default function Product() {
               {/* Product grid */}
               <div className="lg:col-span-4 w-full">
                 <div className='flex flex-wrap justify-center bg-white py-5'>
-                    {mens_kurta.map((item) => <ProductCard />)}
+                    {mens_kurta.map((item) => <ProductCard product={item} />)}
                 </div>
               </div>
             </div>
