@@ -6,7 +6,7 @@ import { mainCarouselData } from "./MainCarouselData";
 const MainCarousel = () => {
   const items = mainCarouselData.map((item) => (
     <img
-      className="cursor-pointer"
+      className="cursor-pointer h-[25rem] object-left  sm:h-full"
       style={{ width: "100%", objectFit: "cover" }}
       role="presentation"
       src={item.image}

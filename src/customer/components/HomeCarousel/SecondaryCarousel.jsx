@@ -6,8 +6,8 @@ import { SecondaryCarouselData } from "./SecondaryCarouselData";
 const SecondaryCarousel = () => {
   const items = SecondaryCarouselData.map((item) => (
     <img
-      className="cursor-pointer"
-      style={{ width: "100%", objectFit: "cover" }}
+    className="cursor-pointer h-[25rem] object-left  sm:h-full"
+    style={{ width: "100%", objectFit: "cover" }}
       role="presentation"
       src={item.image}
       alt=""
