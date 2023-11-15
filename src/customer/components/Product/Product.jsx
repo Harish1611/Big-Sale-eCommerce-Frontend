@@ -285,7 +285,7 @@ export default function Product() {
                 {singleFilter.map((section) => (
                   <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
                     {({ open }) => (
-                         <FormControl>
+                        <>
                         <h3 className="-my-3 flow-root">
                           <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
                             {/* <span className="font-medium text-gray-900"></span> */}
@@ -302,6 +302,7 @@ export default function Product() {
                         </h3>
                         <Disclosure.Panel className="pt-6">
                           <div className="space-y-4">
+                          <FormControl>
                           <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
                                 defaultValue="female"
@@ -316,9 +317,10 @@ export default function Product() {
                            
                             ))}
                              </RadioGroup>
+                             </FormControl>
                           </div>
                         </Disclosure.Panel>
-                        </FormControl>
+                        </>
                     )}
                   </Disclosure>
                 ))}
