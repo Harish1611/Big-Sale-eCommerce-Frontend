@@ -162,7 +162,7 @@ export default function Product() {
 
         <main className="mx-auto max-w-full px-4 sm:px-6 lg:px-14">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
 
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
