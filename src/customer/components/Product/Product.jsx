@@ -12,6 +12,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import FilterIcon from '@mui/icons-material/Tune';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const sortOptions = [
  
@@ -24,7 +25,33 @@ function classNames(...classes) {
 }
 
 export default function Product() {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const filterHandler = (value, sectionId) => {
+    const searchParams = new URLSearchParams(location.search);
+
+    let filterValues = searchParams.getAll(sectionId);
+    if(filterValues.length > 0 && filterValues[0].split(",").includes(value)){
+      filterValues = filterValues[0].split(",").filter((item) => item!==value);
+
+      if(filterValues.length === 0){
+        searchParams.delete(sectionId)
+      }
+    }
+    else{
+      filterValues.push(value)
+    }
+
+    if(filterValues.length > 0 ){
+      searchParams.set(sectionId,filterValues.join(","));
+     
+    }
+
+    const query = searchParams.toString();
+    navigate({search:`?${query}`})
+  }
 
   return (
     <div className="bg-white">
@@ -266,6 +293,8 @@ export default function Product() {
                             {section.options.map((option, optionIdx) => (
                               <div key={option.value} className="flex items-center">
                                 <input
+                                  
+                                  onChange={() => filterHandler(option.value, section.id)}
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
                                   defaultValue={option.value}
