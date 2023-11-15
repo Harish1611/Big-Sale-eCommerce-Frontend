@@ -11,6 +11,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import FilterIcon from '@mui/icons-material/Tune';
 
 const sortOptions = [
  
@@ -235,6 +236,11 @@ export default function Product() {
 
             <div className="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-5">
               {/* Filters */}
+             <div >
+              <div className='py-10 flex justify-between items-center'>
+              <h1 className='text-lg opacity-50 font-bold'> Filters</h1>
+              <FilterIcon />
+              </div>
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
               
@@ -289,7 +295,7 @@ export default function Product() {
                         <h3 className="-my-3 flow-root">
                           <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
                             {/* <span className="font-medium text-gray-900"></span> */}
-                            <FormLabel className="font-medium text-gray-900" id="demo-radio-buttons-group-label">{section.name}</FormLabel>
+                            <FormLabel sx={{color:"black"}} className="font-medium text-gray-900" id="demo-radio-buttons-group-label">{section.name}</FormLabel>
 
                             <span className="ml-6 flex items-center">
                               {open ? (
@@ -325,7 +331,7 @@ export default function Product() {
                   </Disclosure>
                 ))}
               </form>
-
+              </div>
               {/* Product grid */}
               <div className="lg:col-span-4 w-full">
                 <div className='flex flex-wrap justify-center bg-white py-5'>
