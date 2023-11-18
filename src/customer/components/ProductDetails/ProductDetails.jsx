@@ -1,27 +1,8 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
+
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
+import { Rating } from '@mui/material'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -152,29 +133,20 @@ export default function ProductDetails() {
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
+           <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6'>
+            <p className='font-semibold'> 199</p>
+            <p className='opacity-50 line-through'>211</p>
+            <p className='text-green-600 font-semibold'>5% off</p>
 
+           </div>
             {/* Reviews */}
             <div className="mt-6">
-              <h3 className="sr-only">Reviews</h3>
-              <div className="flex items-center">
-                <div className="flex items-center">
-                  {[0, 1, 2, 3, 4].map((rating) => (
-                    <StarIcon
-                      key={rating}
-                      className={classNames(
-                        reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                        'h-5 w-5 flex-shrink-0'
-                      )}
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                  {reviews.totalCount} reviews
-                </a>
-              </div>
+              <div className='flex items-center space-x-3'>
+            <Rating name="read-only" value={3.5} readOnly />
+            <p className='opacity-50 text-sm'>56540 Rating</p>
+            <p className='ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500'>3457 Reviews</p>
+            </div>
+              
             </div>
 
             <form className="mt-10">
