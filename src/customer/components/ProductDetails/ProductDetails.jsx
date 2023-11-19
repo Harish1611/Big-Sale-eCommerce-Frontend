@@ -4,6 +4,8 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { Button, Grid, LinearProgress, Rating, Box } from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
+import { mens_kurta } from '../../../Data/Mens_Kurtha'
+import HomeCollectionCard from '../HomeCollectionCard/HomeCollectionCard'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -317,6 +319,15 @@ export default function ProductDetails() {
 
  
 </div>
+       </section>
+
+       {/* similar products */}
+
+       <section className='pt-10'>
+        <h1 className='py-5 text-xl font-bold'>Similar Products</h1>
+        <div className='flex flex-wrap space-y-5'>
+          {mens_kurta.map((item)=><HomeCollectionCard product={item}/>)}
+        </div>
        </section>
 
       
