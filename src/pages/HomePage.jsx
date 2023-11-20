@@ -26,7 +26,6 @@ const HomePage = () => {
       <HomeCollectionSection data={Women_Saree} section={"Trending"} />
 
 
-      <Footer />
     </div>
   );
 };
