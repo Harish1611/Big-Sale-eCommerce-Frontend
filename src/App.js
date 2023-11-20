@@ -9,14 +9,14 @@ function App() {
   return (
     <div>
       <Navigation />
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <Product /> */}
 
       {/* <ProductDetails /> */}
 
       {/* <Cart /> */}
 
-      {/* <Checkout /> */}
+      <Checkout />
     </div>
   );
 }

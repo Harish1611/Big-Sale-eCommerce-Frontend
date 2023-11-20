@@ -23,13 +23,12 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
- 
+
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
   const jwt = localStorage.getItem("jwt");
 
-  
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -42,14 +41,12 @@ export default function Navigation() {
   };
   const handleClose = () => {
     setOpenAuthModal(false);
-   
   };
 
   const handleCategoryClick = (category, section, item, close) => {
     //navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
-
 
   return (
     <div className="bg-white pb-10">
@@ -219,8 +216,8 @@ export default function Navigation() {
       </Transition.Root>
 
       <header className="relative bg-white">
-      <p className="flex h-10 items-center justify-center bg-gradient-to-r from-[#00172D] via-[#02386E] to-[#00264D] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-           <ScrollText />
+        <p className="flex h-10 items-center justify-center bg-gradient-to-r from-[#00172D] via-[#02386E] to-[#00264D] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+          <ScrollText />
         </p>
 
         <nav aria-label="Top" className="mx-auto">
@@ -237,12 +234,13 @@ export default function Navigation() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                 <a href="#">
-                   <span className="sr-only">Your Company</span>
+                <a href="#">
+                  <span className="sr-only">Your Company</span>
                   <img
                     className="h-12 max-sm:h-7  w-auto  "
                     src={logo}
-                    alt=""                   />
+                    alt=""
+                  />
                 </a>
               </div>
 
@@ -380,7 +378,7 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {true? (
+                  {true ? (
                     <div>
                       <Avatar
                         className="text-white"
@@ -395,7 +393,7 @@ export default function Navigation() {
                           cursor: "pointer",
                         }}
                       >
-                       R
+                        R
                       </Avatar>
                       {/* <Button
                         id="basic-button"
@@ -418,11 +416,9 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        
-                        <MenuItem >
-                          My Orders
-                        </MenuItem>
-                        <MenuItem >Logout</MenuItem>
+
+                        <MenuItem>My Orders</MenuItem>
+                        <MenuItem>Logout</MenuItem>
                       </Menu>
                     </div>
                   ) : (
@@ -448,9 +444,7 @@ export default function Navigation() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Button
-                    className="group -m-2 flex items-center p-2"
-                  >
+                  <Button className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -469,4 +463,3 @@ export default function Navigation() {
     </div>
   );
 }
-
