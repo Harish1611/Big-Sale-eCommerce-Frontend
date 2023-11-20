@@ -1,5 +1,6 @@
 import React from 'react'
 import AddressCard from '../AddressCard/AddressCard'
+import OrderTracking from './OrderTracking'
 
 const OrderDetails = () => {
   return (
@@ -9,6 +10,11 @@ const OrderDetails = () => {
             <h1 className='fotn-bold text-xl py-7'>Delivery Address</h1>
         <AddressCard />
         </div>
+
+        <div className='py-20'>
+            <OrderTracking activeStep={3} />
+        </div>
+
     </div>
   )
 }
