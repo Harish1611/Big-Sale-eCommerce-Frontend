@@ -6,6 +6,7 @@ import Product from "../components/Product/Product";
 import Cart from "../components/Cart/Cart";
 import HomePage from "../../pages/HomePage";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import Checkout from "../components/Checkout/Checkout";
 
 const CustomerRoutes = () => {
   return (
@@ -21,6 +22,8 @@ const CustomerRoutes = () => {
           element={<Product />}
   ></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route> 
+        <Route path="/checkout" element={<Checkout />}></Route> 
+
 
         {/* <ProductDetails /> */}
 
