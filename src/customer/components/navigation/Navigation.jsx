@@ -237,7 +237,7 @@ export default function Navigation() {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
-                  <img
+                  <img onClick={() => navigate('/')}
                     className="h-12 max-sm:h-7  w-auto  "
                     src={logo}
                     alt=""
