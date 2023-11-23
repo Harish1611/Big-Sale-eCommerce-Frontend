@@ -9,7 +9,7 @@ import {
     GET_USER_SUCCESS,
     GET_USER_FAILURE,
     LOGOUT,
-  } from "./ActionTypes";
+  } from "./ActionType";
   
   const initialState = {
     user: null,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Navigation from "../components/navigation/Navigation";
 import Product from "../components/Product/Product";
@@ -13,6 +13,7 @@ import OrderDetails from "../components/Order/OrderDetails";
 const CustomerRoutes = () => {
   return (
     <div>
+
       <div>
         <Navigation />
       </div>
@@ -34,20 +35,12 @@ const CustomerRoutes = () => {
           element={<OrderDetails />}
         ></Route>
 
-        {/* <ProductDetails /> */}
-
-        {/* <Cart /> */}
-
-        {/* <Checkout /> */}
-
-        {/* <Order /> */}
-
-        {/* <OrderDetails /> */}
       </Routes>
       <div>
         <Footer />
       </div>
     </div>
+
   );
 };
 
