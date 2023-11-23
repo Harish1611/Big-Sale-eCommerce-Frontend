@@ -9,7 +9,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import ProductCard from "./ProductCard";
-import { mens_kurta } from "../../../Data/Mens_Kurtha";
+import { mens_kurta } from "../../../data/Mens_Kurtha";
 import { filters, singleFilter } from "./FilterData";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";

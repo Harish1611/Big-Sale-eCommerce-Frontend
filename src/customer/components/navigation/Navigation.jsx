@@ -378,7 +378,7 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {false ? (
+                  {openAuthModal ? (
                     <div>
                       <Avatar
                         className="text-white"
