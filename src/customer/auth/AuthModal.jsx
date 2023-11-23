@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Modal, Typography } from "@mui/material";
+import RegisterForm from "./RegisterForm";
 
 const style = {
   position: "absolute",
@@ -24,7 +25,7 @@ const AuthModal = (handleClose, open) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+           <RegisterForm />
           </Typography>
         </Box>
       </Modal>
