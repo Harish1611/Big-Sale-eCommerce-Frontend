@@ -9,7 +9,8 @@ import {
   FIND_PRODUCT_BY_ID_FAILURE,
 
 } from "./ActionType";
-import api, { API_BASE_URL } from "../../config/apiConfig";
+
+import {api, API_BASE_URL } from "../../config/apiConfig";
 
 export const findProducts = (reqData) => async (dispatch) => {
   const {
