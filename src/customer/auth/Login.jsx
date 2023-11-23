@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, TextField, Button} from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { getUser, login } from "../../state/Auth/Action";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch=useDispatch();
+  const jwt=localStorage.getItem("jwt");
+  const { auth } = useSelector((store) => store);
+  useEffect(()=>{
+    if(jwt){
+      dispatch(getUser(jwt))
+    }
+  
+  },[jwt])
+  
+  
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
-    const userData = {
+    
+    const userData={
       email: data.get("email"),
       password: data.get("password"),
-    };
-    console.log("login user", userData);
+     
+    }
+    console.log("login user",userData);
+  
+    dispatch(login(userData));
+
   };
+
+
   return (
     <div>
-      {" "}
       <form className="w-full" onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
