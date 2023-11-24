@@ -496,8 +496,8 @@ export default function Product() {
                 </form>
               </div>
               {/* Product grid */}
-              <div className="lg:col-span-4 w-full">
-                <div className="flex flex-wrap justify-center bg-white py-5">
+              <div className="lg:col-span-4 lg:pl-10 w-full">
+                <div className="flex flex-wrap justify-center lg:justify-start bg-white py-5">
                   {product.products && product.products?.content?.map((item) => (
                     <ProductCard product={item} />
                   ))}
