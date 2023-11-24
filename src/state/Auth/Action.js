@@ -11,7 +11,7 @@ import {
   GET_USER_FAILURE,
   LOGOUT
 } from './ActionType';
-import { API_BASE_URL } from '../../config/apiConfig';
+import {api, API_BASE_URL } from '../../config/apiConfig';
 
 // Register action creators
 const registerRequest = () => ({ type: REGISTER_REQUEST });

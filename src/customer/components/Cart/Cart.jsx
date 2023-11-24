@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartItem from "./CartItem";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCart } from "../../../state/Cart/Action";
 
 const Cart = () => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt");
+  const {cart}=useSelector(store=>store);
+  console.log("cart ",cart)
+
+  useEffect(() => {
+    dispatch(getCart(jwt));
+  }, [jwt]);
 
   const checkoutHandler = () => {
     navigate('/checkout?step=2')

@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { Button, Grid, LinearProgress, Rating, Box } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 import { mens_kurta } from "../../../Data/Mens_Kurtha";
 import HomeCollectionCard from "../HomeCollectionCard/HomeCollectionCard";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { findProductById } from "../../../state/Product/Action";
+import { addItemToCart } from "../../../state/Cart/Action";
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -62,16 +64,25 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+  const [selectedSize, setSelectedSize] = useState("");
 
   const navigate = useNavigate();
+  const { productId } = useParams();
+  const dispatch = useDispatch();
+  const { products } = useSelector((store) => store);
+  const jwt = localStorage.getItem("jwt");
 
   const addToCartHandler = () => {
-
-    navigate('/cart')
-
-  }
+    const data = { productId, size: selectedSize.name };
+    console.log(data)
+    dispatch(addItemToCart({ data, jwt }));
+    navigate("/cart");
+  };
+  
+  useEffect(() => {
+    const data = { productId: productId };
+    dispatch(findProductById(data));
+  }, [productId]);
 
   return (
     <div className="bg-white lg:px-20">
@@ -119,7 +130,7 @@ export default function ProductDetails() {
           <div className="flex flex-col items-center">
             <div className="over-flow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
-                src={product.images[0].src}
+                src={products.product?.imageUrl}
                 alt={product.images[0].alt}
                 className="h-full w-full object-cover object-center"
               />
@@ -142,11 +153,11 @@ export default function ProductDetails() {
             <div className="lg:col-span-2 ">
               <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
                 {" "}
-                Brand Name
+                {products.product?.brand}
               </h1>
               <h1 className="text-lg lg:text-xl opacity-60 pt-1 text-gray-900">
                 {" "}
-                Product Title Name
+                {products.product?.title}
               </h1>
             </div>
 
@@ -154,9 +165,18 @@ export default function ProductDetails() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
               <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6">
-                <p className="font-semibold"> 199</p>
-                <p className="opacity-50 line-through">211</p>
-                <p className="text-green-600 font-semibold">5% off</p>
+                <p className="font-semibold">
+                  {" "}
+                  {products.product?.discountedPrice}
+                </p>
+                <p className="opacity-50 line-through">
+                  {" "}
+                  {products.product?.price}
+                </p>
+                <p className="text-green-600 font-semibold">
+                  {" "}
+                  {products.product?.discountPersent}% off
+                </p>
               </div>
               {/* Reviews */}
               <div className="mt-6">
@@ -245,7 +265,8 @@ export default function ProductDetails() {
                   </RadioGroup>
                 </div>
 
-                <Button onClick={addToCartHandler}
+                <Button
+                  onClick={addToCartHandler}
                   color="secondary"
                   variant="contained"
                   sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}

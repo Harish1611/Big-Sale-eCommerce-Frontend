@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import api,{ API_BASE_URL } from "../../config/apiConfig";
+import {api, API_BASE_URL }  from "../../config/apiConfig";
 import {
     ADD_ITEM_TO_CART_REQUEST,
     ADD_ITEM_TO_CART_SUCCESS,
