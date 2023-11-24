@@ -15,7 +15,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getCart(jwt));
-  }, [jwt]);
+  }, [cart.updateCartItem, cart.deleteCartItem, jwt]);
 
   const checkoutHandler = () => {
     navigate('/checkout?step=2')
@@ -37,12 +37,13 @@ const Cart = () => {
             <hr />
             <div className="space-y-3  mb-10">
               <div className="flex justify-between pt-3 text-black">
-                <span>Price</span>
-                <span> 3456 </span>
+                <span>Price ({cart.cart?.totalItem} item)</span>
+                <span><span>₹{cart.cart?.totalPrice}</span>
+ </span>
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Discount</span>
-                <span className="text-green-600"> -500 </span>
+                <span className="text-green-600"> -₹{cart.cart?.discounte}</span>
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Delivary Charge</span>
@@ -50,7 +51,7 @@ const Cart = () => {
               </div>
               <div className="flex justify-between pt-3 font-bold ">
                 <span>Total Amount</span>
-                <span className="text-green-600 "> 2346 </span>
+                <span className="text-green-600 ">₹{cart.cart?.totalDiscountedPrice}</span>
               </div>
             </div>
 
