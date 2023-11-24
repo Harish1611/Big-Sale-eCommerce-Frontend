@@ -24,8 +24,8 @@ const Cart = () => {
     <div>
       <div className="lg:grid grid-cols-3 lg:px-16 relative">
         <div className=" col-span-2">
-          {[1, 1, 1].map((item) => (
-            <CartItem />
+          {cart.cart?.cartItems.map((item) => (
+            <CartItem item={item} />
           ))}
         </div>
         <div className="px-5 sticky top-0 h-[100h] mt-5 lg:mt-0">
