@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div>
-      <form className="w-full" onSubmit={handleSubmit}>
+      <form className=" p-8  w-auto sm:w-full " onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <TextField

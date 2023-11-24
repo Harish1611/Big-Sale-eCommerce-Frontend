@@ -186,25 +186,23 @@ export default function Navigation() {
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
                                   <p
-                                                  onClick={() =>
-                                                   { handleCategoryClickMobile(
-                                                      category,
-                                                      section,
-                                                      item
-                                            
-                                                    );
-                                                   setOpen(false);}
-                                                  }
-                                                  className="cursor-pointer hover:text-gray-800"
-                                                >
-                                                  {item.name}
-                                                </p>
+                                    onClick={() => {
+                                      handleCategoryClickMobile(
+                                        category,
+                                        section,
+                                        item
+                                      );
+                                      setOpen(false);
+                                    }}
+                                    className="cursor-pointer hover:text-gray-800"
+                                  >
+                                    {item.name}
+                                  </p>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         ))}
-                        
                       </Tab.Panel>
                     ))}
                   </Tab.Panels>
@@ -225,15 +223,30 @@ export default function Navigation() {
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <span
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                      onClick={() => {
-                        setOpen(false);
-                        handleOpen();
-                      }}
-                    >
-                      Sign in
-                    </span>
+                    <>
+                      {" "}
+                      {auth.user ? (
+                        <span
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                          onClick={() => {
+                            handleLogout();
+                            setOpen(false);
+                          }}
+                        >
+                          Log out
+                        </span>
+                      ) : (
+                        <span
+                          className="-m-2 block p-2 font-medium text-gray-900"
+                          onClick={() => {
+                            setOpen(false);
+                            handleOpen();
+                          }}
+                        >
+                          Sign in
+                        </span>
+                      )}
+                    </>
                   </div>
                 </div>
 

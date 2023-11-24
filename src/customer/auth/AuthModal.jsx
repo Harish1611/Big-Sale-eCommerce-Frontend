@@ -15,6 +15,7 @@ const style = {
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
+  margin: "20px"
 };
 
 export default function AuthModal({ handleClose, open }) {
@@ -29,21 +30,27 @@ export default function AuthModal({ handleClose, open }) {
   }, [auth.user]);
   return (
     <>
+    
     <Modal
       open={open}
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       size="large"
+      className=" bg-transparent "
     >
-      <Box className="rounded-md" sx={style}>
+      <div  className="rounded-md   ml-6 mr-6 sm:m-2   ">
+      <Box className=" " sx={style}>
         {location.pathname === "/login" ? (
           <Login />
         ) : (
           <RegisterForm />
         )}
       </Box>
+      </div>
     </Modal>
+
+    
     
     </>
     
