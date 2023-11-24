@@ -20,6 +20,8 @@ import FilterIcon from "@mui/icons-material/Tune";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findProducts } from "../../../state/Product/Action";
+import Pagination from "@mui/material/Pagination";
+
 
 const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
@@ -50,7 +52,12 @@ export default function Product() {
   const stock = searchParams.get("stock");
 
 
-
+  const handlePaginationChange = (event, value) => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set("page", value);
+    const query = searchParams.toString();
+    navigate({ search: `?${query}` });
+  };
 
   const filterHandler = (value, sectionId) => {
     const searchParams = new URLSearchParams(location.search);
@@ -96,7 +103,7 @@ export default function Product() {
       minDiscount: discount || 0,
       sort: sortValue || "price_low",
       pageNumber: pageNumber ,
-      pageSize: 10,
+      pageSize: 1,
       stock: stock,
     };
     dispatch(findProducts(data));
@@ -505,6 +512,18 @@ export default function Product() {
               </div>
             </div>
           </section>
+         
+        {/* pagination section */}
+        <section className="w-full px-[3.6rem]">
+          <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border rounded-md">
+            <Pagination
+              count={product.products?.totalPages}
+              color="primary"
+              className=""
+              onChange={handlePaginationChange}
+            />
+          </div>
+        </section>
         </main>
       </div>
     </div>
