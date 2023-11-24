@@ -30,14 +30,14 @@ export default function Navigation() {
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
   const jwt = localStorage.getItem("jwt");
-  const location=useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     if (jwt) {
       dispatch(getUser(jwt));
     }
   }, [jwt]);
-  
+
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -50,16 +50,14 @@ export default function Navigation() {
   };
   const handleClose = () => {
     setOpenAuthModal(false);
-   
   };
 
-
   useEffect(() => {
-    if (auth.user){ 
+    if (auth.user) {
       handleClose();
     }
-    if(location.pathname==="/login" || location.pathname==="/register"){
-      navigate(-1)
+    if (location.pathname === "/login" || location.pathname === "/register") {
+      navigate(-1);
     }
   }, [auth.user]);
 
@@ -71,6 +69,9 @@ export default function Navigation() {
   const handleCategoryClick = (category, section, item, close) => {
     navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
+  };
+  const handleCategoryClickMobile = (category, section, item) => {
+    navigate(`/${category.id}/${section.id}/${item.id}`);
   };
 
   return (
@@ -184,14 +185,26 @@ export default function Navigation() {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <p className="-m-2 block p-2 text-gray-500">
-                                    {"item.name"}
-                                  </p>
+                                  <p
+                                                  onClick={() =>
+                                                   { handleCategoryClickMobile(
+                                                      category,
+                                                      section,
+                                                      item
+                                            
+                                                    );
+                                                   setOpen(false);}
+                                                  }
+                                                  className="cursor-pointer hover:text-gray-800"
+                                                >
+                                                  {item.name}
+                                                </p>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         ))}
+                        
                       </Tab.Panel>
                     ))}
                   </Tab.Panels>
@@ -212,12 +225,15 @@ export default function Navigation() {
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <a
-                      href="/"
+                    <span
                       className="-m-2 block p-2 font-medium text-gray-900"
+                      onClick={() => {
+                        setOpen(false);
+                        handleOpen();
+                      }}
                     >
                       Sign in
-                    </a>
+                    </span>
                   </div>
                 </div>
 
@@ -261,7 +277,8 @@ export default function Navigation() {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
-                  <img onClick={() => navigate('/')}
+                  <img
+                    onClick={() => navigate("/")}
                     className="h-12 max-sm:h-7  w-auto  "
                     src={logo}
                     alt=""
@@ -403,7 +420,7 @@ export default function Navigation() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                {auth.user ? (
+                  {auth.user ? (
                     <div>
                       <Avatar
                         className="text-white"
@@ -441,10 +458,8 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        
-                        <MenuItem >
-                          My Orders
-                        </MenuItem>
+
+                        <MenuItem>My Orders</MenuItem>
                         <MenuItem onClick={handleLogout}>Logout</MenuItem>
                       </Menu>
                     </div>
