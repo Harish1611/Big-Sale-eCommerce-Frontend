@@ -16,7 +16,7 @@ import Order from "../customer/components/Order/Order";
 import OrderDetails from "../customer/components/Order/OrderDetails";
 import Checkout from "../customer/components/Checkout/Checkout";
 // import PaymentSuccess from "../customer/Components/paymentSuccess/PaymentSuccess";
-// import RateProduct from "../customer/Components/ReviewProduct/RateProduct";
+import RateProduct from "../customer/components/ReviewProduct/RateProduct";
 import Footer from "../customer/components/Footer/Footer";
 
 const CustomerRoutes = () => {
@@ -47,7 +47,7 @@ const CustomerRoutes = () => {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/account/order" element={<Order />}></Route>
         <Route path="/account/order/:orderId" element={<OrderDetails />}></Route>
-        {/* <Route path="/account/rate/:productId" element={<RateProduct />}></Route> */}
+        <Route path="/account/rate/:productId" element={<RateProduct />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         {/* <Route path="/payment/:orderId" element={<PaymentSuccess />}></Route> */}
         {/* <Route path="*" element={<NotFound />} /> */}
