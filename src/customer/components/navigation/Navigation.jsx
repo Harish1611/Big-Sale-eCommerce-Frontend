@@ -480,7 +480,7 @@ export default function Navigation() {
                           Profile
                         </MenuItem>
 
-                        <MenuItem>My Orders</MenuItem>
+                        <MenuItem onClick={()=>navigate('/account/order')}>My Orders</MenuItem>
                         <MenuItem onClick={handleLogout}>Logout</MenuItem>
                       </Menu>
                     </div>
@@ -488,8 +488,9 @@ export default function Navigation() {
                     <Button
                       onClick={handleOpen}
                       className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      sx={{textTransform:"Capitalize"}}
                     >
-                      Signin
+                      Sign In
                     </Button>
                   )}
                 </div>
