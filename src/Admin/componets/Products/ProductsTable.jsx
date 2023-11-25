@@ -20,7 +20,6 @@ import {
 } from "@mui/material";
 
 import React from "react";
-import { dressPage1 } from "../../../Data/dress/page1";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -67,7 +66,7 @@ const ProductsTable = () => {
       stock: availability,
     };
     dispatch(findProducts(data));
-  }, [availability, category, sort,page,customersProduct.deleteProduct]);
+  }, [availability, category, sort,page]);
 
   const handleFilterChange = (e, sectionId) => {
     console.log(e.target.value, sectionId);

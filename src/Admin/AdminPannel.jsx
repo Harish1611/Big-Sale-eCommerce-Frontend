@@ -21,14 +21,14 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import DemoAdmin from "./Views/DemoAdmin";
 import CreateProductForm from "./componets/createProduct/CreateProductFrom";
 import CreateProuductDemo from "./componets/createProduct/CreateProuductDemo";
-import CreateProduct from "../customer/Components/Create/CreateProduct";
+import CreateProduct from "./componets/createProduct/CreateProductFrom";
 import "./AdminPannel.css";
 import ProductsTable from "./componets/Products/ProductsTable";
 import OrdersTable from "./componets/Orders/OrdersTable";
 import Customers from "./componets/customers/customers";
 import UpdateProductForm from "./componets/updateProduct/UpdateProduct";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, logout } from "../Redux/Auth/Action";
+import { getUser, logout } from "../state/Auth/Action";
 import { useEffect } from "react";
 import { deepPurple } from "@mui/material/colors";
 

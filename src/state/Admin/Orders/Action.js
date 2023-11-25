@@ -1,5 +1,5 @@
 
-import api from "../../../config/apiConfig";
+import {api} from "../../../config/apiConfig";
 import {
   canceledOrderFailure,
   canceledOrderRequest,
