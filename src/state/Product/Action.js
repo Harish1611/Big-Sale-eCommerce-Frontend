@@ -4,6 +4,9 @@ import {
   FIND_PRODUCTS_BY_CATEGORY_REQUEST,
   FIND_PRODUCTS_BY_CATEGORY_SUCCESS,
   FIND_PRODUCTS_BY_CATEGORY_FAILURE,
+  FIND_PRODUCTS_BY_CATEGORY_HOME_REQUEST,
+  FIND_PRODUCTS_BY_CATEGORY_HOME_SUCCESS,
+  FIND_PRODUCTS_BY_CATEGORY_HOME_FAILURE,
   FIND_PRODUCT_BY_ID_REQUEST,
   FIND_PRODUCT_BY_ID_SUCCESS,
   FIND_PRODUCT_BY_ID_FAILURE,
@@ -57,6 +60,36 @@ export const findProducts = (reqData) => async (dispatch) => {
     });
   }
 };
+
+
+export const findProductsByCategory = (reqData) => async (dispatch) => {
+   const [cat1, cat2, cat3] = reqData
+   console.log("Sent Data",reqData,cat1,cat2)
+  try {
+    dispatch({ type: FIND_PRODUCTS_BY_CATEGORY_HOME_REQUEST });
+
+    const { data: data1 } = await api.get(`/api/products?category=${cat1}`);
+    const { data: data2 } = await api.get(`/api/products?category=${cat2}`);
+    const { data: data3 } = await api.get(`/api/products?category=${cat3}`);
+
+
+
+    console.log("get product by category Home Data - ", data1, data2);
+    dispatch({
+      type: FIND_PRODUCTS_BY_CATEGORY_HOME_SUCCESS,
+      payload: [data1,data2,data3],
+    });
+  } catch (error) {
+    dispatch({
+      type: FIND_PRODUCTS_BY_CATEGORY_HOME_FAILURE,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
 
 export const findProductById = (reqData) => async (dispatch) => {
   try {
