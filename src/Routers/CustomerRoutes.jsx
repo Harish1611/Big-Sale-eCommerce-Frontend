@@ -2,10 +2,10 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ProductDetails from "../customer/components/ProductDetails/ProductDetails";
 import Product from "../customer/components/Product/Product"
-// import Contact from "../Pages/Contact";
-// import TearmsCondition from "../Pages/TearmsCondition";
-// import PrivacyPolicy from "../Pages/PrivacyPolicy";
-// import About from "../Pages/About";
+import Contact from "../pages/Contact";
+import TearmsCondition from "../pages/TearmsCondition";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import About from "../pages/About";
 import Homepage from "../pages/HomePage";
 import Navigation from "../customer/components/navigation/Navigation";
 import Cart from "../customer/components/Cart/Cart";
@@ -38,10 +38,10 @@ const CustomerRoutes = () => {
 
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/home" element={<Homepage />}></Route>
-        {/* <Route path="/about" element={<About />}></Route> */}
-        {/* <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route> */}
-        {/* <Route path="/terms-condition" element={<TearmsCondition />}></Route> */}
-        {/* <Route path="/contact" element={<Contact />}></Route> */}
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route>
+        <Route path="/terms-condition" element={<TearmsCondition />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/:levelOne/:levelTwo/:levelThree" element={<Product />}></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>

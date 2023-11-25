@@ -2,10 +2,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../pages/HomePage";
-import About from "../Pages/About";
-import PrivacyPolicy from "../Pages/PrivacyPolicy";
-import TearmsCondition from "../Pages/TearmsCondition";
-import Contact from "../Pages/Contact";
+import About from "../pages/About";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TearmsCondition from "../pages/TearmsCondition";
+import Contact from "../pages/Contact";
 import Product from "../customer/components/Product/Product";
 import ProductDetails from "../customer/components/ProductDetails/ProductDetails";
 import Cart from "../customer/components/Cart/Cart";
