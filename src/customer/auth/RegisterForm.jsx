@@ -30,7 +30,7 @@ const RegisterForm = () => {
   };
   return (
     <div>
-      <form className=" p-8  w-auto sm:w-full " onSubmit={submissionHandler}>
+      <form className=" p-8 sm:p-4 sm:pt-8 w-auto sm:w-full " onSubmit={submissionHandler}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
