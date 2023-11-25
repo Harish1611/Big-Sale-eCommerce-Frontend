@@ -116,9 +116,65 @@ export const navigation = {
           },
         ],
       },
+      {
+        id: 'kids',
+        name: 'Kids',
+        featured: [
+          {
+            name: 'New Arrivals',
+            id: '#',
+            imageSrc: 'https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/o/l/6/1-2-years-kids-wear-002-ortugal-original-imagjwngv3mcp8gv.jpeg?q=70',
+            imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
+          },
+          {
+            name: 'Tredy Ware',
+            id: '#',
+            imageSrc: 'https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/6/d/h/9-10-years-kids-printed-5-number-modeling-dwarkadhish-creation-original-imagrxfefbyf4nre.jpeg?q=70',
+            imageAlt:
+              'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+          },
+        ],
+        sections: [
+          {
+            id: 'clothing',
+            name: 'Clothing',
+            items: [
+              { name: 'Shirt', id: 'shirt' },
+              { name: 'Kids Jeans', id: 'kids-jeans' },
+              { name: 'Sweaters', id: '#' },
+              { name: 'T-Shirts', id: 't-shirt' },
+              { name: 'Jackets', id: '#' },
+              { name: 'Activewear', id: '#' },
+              
+            ],
+          },
+          {
+            id: 'accessories',
+            name: 'Accessories',
+            items: [
+              { name: 'Watches', id: '#' },
+              { name: 'Wallets', id: '#' },
+              { name: 'Bags', id: '#' },
+              { name: 'Sunglasses', id: '#' },
+              { name: 'Hats', id: '#' },
+              { name: 'Belts', id: '#' },
+            ],
+          },
+          {
+            id: 'brands',
+            name: 'Brands',
+            items: [
+              { name: 'Re-Arranged', id: '#' },
+              { name: 'Counterfeit', id: '#' },
+              { name: 'Full Nelson', id: '#' },
+              { name: 'My Way', id: '#' },
+            ],
+          },
+        ],
+      },
     ],
     pages: [
       { name: 'Company', id: '/' },
-      { name: 'Stores', id: '/' },
+      { name: 'Contact', id: '/' },
     ],
   }

@@ -16,6 +16,8 @@ import logo from "../../../assets/logo.png";
 import ScrollText from "../../../UI Elements/ScrollText";
 import AuthModal from "../../auth/AuthModal";
 import { getUser, logout } from "../../../state/Auth/Action";
+import { getCart } from "../../../state/Cart/Action";
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -26,6 +28,7 @@ export default function Navigation() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { auth } = useSelector((store) => store);
+  const {cart}=useSelector(store=>store);
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
@@ -37,6 +40,11 @@ export default function Navigation() {
       dispatch(getUser(jwt));
     }
   }, [jwt]);
+
+  useEffect(() => {
+    dispatch(getCart(jwt));
+  }, [jwt]);
+
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -443,7 +451,7 @@ export default function Navigation() {
                         aria-expanded={open ? "true" : undefined}
                         // onClick={handleUserClick}
                         sx={{
-                          bgcolor: deepPurple[500],
+                          bgcolor: "#02376C",
                           color: "white",
                           cursor: "pointer",
                         }}
@@ -499,13 +507,13 @@ export default function Navigation() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Button className="group -m-2 flex items-center p-2">
+                  <Button className="group -m-2 flex items-center p-2" onClick={()=> navigate("/cart")}>
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      2
+                     {cart.cart?.totalItem}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Button>
