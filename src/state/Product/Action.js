@@ -63,7 +63,7 @@ export const findProducts = (reqData) => async (dispatch) => {
 
 
 export const findProductsByCategory = (reqData) => async (dispatch) => {
-   const [cat1, cat2, cat3] = reqData
+   const [cat1, cat2, cat3, cat4] = reqData
    console.log("Sent Data",reqData,cat1,cat2)
   try {
     dispatch({ type: FIND_PRODUCTS_BY_CATEGORY_HOME_REQUEST });
@@ -71,13 +71,15 @@ export const findProductsByCategory = (reqData) => async (dispatch) => {
     const { data: data1 } = await api.get(`/api/products?category=${cat1}`);
     const { data: data2 } = await api.get(`/api/products?category=${cat2}`);
     const { data: data3 } = await api.get(`/api/products?category=${cat3}`);
+    const { data: data4 } = await api.get(`/api/products?category=${cat4}`);
+
 
 
 
     console.log("get product by category Home Data - ", data1, data2);
     dispatch({
       type: FIND_PRODUCTS_BY_CATEGORY_HOME_SUCCESS,
-      payload: [data1,data2,data3],
+      payload: [data1,data2,data3,data4],
     });
   } catch (error) {
     dispatch({

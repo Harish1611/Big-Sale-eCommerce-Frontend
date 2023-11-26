@@ -96,9 +96,9 @@ export const navigation = {
             id: 'accessories',
             name: 'Accessories',
             items: [
+              { name: 'Shoes', id: 'shoes' },
               { name: 'Watches', id: '#' },
               { name: 'Wallets', id: '#' },
-              { name: 'Bags', id: '#' },
               { name: 'Sunglasses', id: '#' },
               { name: 'Hats', id: '#' },
               { name: 'Belts', id: '#' },

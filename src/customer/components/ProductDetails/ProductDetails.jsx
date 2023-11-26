@@ -72,6 +72,10 @@ export default function ProductDetails() {
   const { products } = useSelector((store) => store);
   const jwt = localStorage.getItem("jwt");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const addToCartHandler = () => {
     const data = { productId, size: selectedSize.name };
     console.log(data)

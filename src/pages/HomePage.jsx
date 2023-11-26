@@ -24,7 +24,7 @@ const HomePage = () => {
   const {products}=useSelector(store=>store);
 
   useEffect(() => {
-    const data=["t-shirt","women_dress","lengha_choli"];
+    const data=["t-shirt","shoes","women_dress","lengha_choli"];
     dispatch(findProductsByCategory(data));
   }, []);
   
@@ -38,11 +38,13 @@ const HomePage = () => {
       <HomeBanner image={firstBanner} />
       <HomeCollectionSection data={products.products[0]} section={"Best Sellers"} />
       <HomeAnouncement />
+      <HomeCollectionSection data={products.products[1]} section={"Footware"} />
+
        <HomeBanner image={secondBanner} />
-      <HomeCollectionSection data={products.products[1]} section={"Women Ware"} />
+      <HomeCollectionSection data={products.products[2]} section={"Women Ware"} />
       <SecondaryCarousel />
       <HomeBanner image={thirdBanner} />
-      <HomeCollectionSection data={products.products[2]} section={"Trending"} /> 
+      <HomeCollectionSection data={products.products[3]} section={"Trending"} /> 
 
 
     </div>

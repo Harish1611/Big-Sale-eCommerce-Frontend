@@ -50,7 +50,10 @@ export default function Product() {
   const sortValue = searchParams.get("sort");
   const pageNumber = searchParams.get("page") || 1;
   const stock = searchParams.get("stock");
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handlePaginationChange = (event, value) => {
     const searchParams = new URLSearchParams(location.search);

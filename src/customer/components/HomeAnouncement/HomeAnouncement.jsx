@@ -1,4 +1,15 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const HomeAnouncement = () => {
+ 
+
+  const navigate= useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="w-full mx-auto sm:px-36 sm:py-24 bg-gray-100 overflow-hidden ">
       <div className="md:flex">
@@ -21,7 +32,7 @@ const HomeAnouncement = () => {
             collection. If you are looking for something that can take your
             style to next level? We have a list of shoes to do just that.
           </p>
-          <button className="text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 hover:bg-blue-700  px-6 py-2 rounded	shadow-lg shadow-indigo-500/40 hover:shadow-blue-500/50">
+          <button onClick={()=>navigate('/men/footware/shoes')} className="text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 hover:bg-blue-700  px-6 py-2 rounded	shadow-lg shadow-indigo-500/40 hover:shadow-blue-500/50">
             Buy Now
           </button>
         </div>
