@@ -15,6 +15,7 @@ import SecondaryCarousel from "../customer/components/HomeCarousel/SecondaryCaro
 import {  findProductsByCategory } from "../state/Product/Action";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import HomeCategory from "../customer/components/HomeCategory/HomeCategory";
 const HomePage = () => {
 
   const productSet = [];
@@ -39,7 +40,7 @@ const HomePage = () => {
       <HomeCollectionSection data={products.products[0]} section={"Best Sellers"} />
       <HomeAnouncement />
       <HomeCollectionSection data={products.products[1]} section={"Footware"} />
-
+      <HomeCategory />
        <HomeBanner image={secondBanner} />
       <HomeCollectionSection data={products.products[2]} section={"Women Ware"} />
       <SecondaryCarousel />

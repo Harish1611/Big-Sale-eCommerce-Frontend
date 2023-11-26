@@ -28,8 +28,8 @@ const HomeCollectionSection = ({ section, data }) => {
 
   return (
     <div className="relative p-8   sm:p-6 mx-0 sm:mx-10 ">
-      <h2 className="text-2xl font-extrabold text-gray-600 py-5">{section}</h2>
-      <hr className="text-black bg-black w-20 h-[3px] mb-6"></hr>
+      <h2 className="text-2xl  text-gray-600 font-serif py-5">{section}</h2>
+      <hr className="text-black bg-black w-20 h-[2px] mb-6"></hr>
       <div className="">
         <AliceCarousel
           disableDotsControls
