@@ -174,7 +174,7 @@ export const navigation = {
       },
     ],
     pages: [
-      { name: 'Company', id: '/about' },
+      { name: 'Company', id: '/about'  },
       { name: 'Contact', id: '/contact' },
     ],
   }

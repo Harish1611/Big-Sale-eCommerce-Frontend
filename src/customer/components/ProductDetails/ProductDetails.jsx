@@ -269,14 +269,12 @@ export default function ProductDetails() {
                   </RadioGroup>
                 </div>
 
-                <Button
+                <button
                   onClick={addToCartHandler}
-                  color="secondary"
-                  variant="contained"
-                  sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}
+                  className=" my-4 px-8 py-4 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]"
                 >
                   Add to Cart
-                </Button>
+                </button>
               </form>
             </div>
 

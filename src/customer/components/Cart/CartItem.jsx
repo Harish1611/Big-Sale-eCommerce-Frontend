@@ -48,13 +48,13 @@ const CartItem = ({item}) => {
             <RemoveCircleOutlineIcon />
           </IconButton>
           <span className="py-1 px-7 border rounded-sm">{item?.quantity}</span>
-          <IconButton sx={{ color: "RGB(145 85 253)" }} onClick={()=>handleUpdateCartItem(1)} >
+          <IconButton sx={{ color: "#0859a9" }} onClick={()=>handleUpdateCartItem(1)} >
             <AddCircleOutlineIcon />
           </IconButton>
         </div>
 
         <div>
-          <Button sx={{ color: "RGB(145 85 253)" }}  onClick={()=>handleRemoveItemFromCart(1)}> REMOVE </Button>
+          <Button sx={{ color: "#0859a9" }}  onClick={()=>handleRemoveItemFromCart(1)}> REMOVE </Button>
         </div>
       </div>
     </div>

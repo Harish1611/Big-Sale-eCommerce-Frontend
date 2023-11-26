@@ -55,14 +55,12 @@ const Cart = () => {
               </div>
             </div>
 
-            <Button onClick={checkoutHandler}
-              color="secondary"
-              variant="contained"
-              className="w-full mt-5"
-              sx={{ px: "2.5rem", py: ".7rem", bgcolor: "#9155fd" }}
-            >
-              Checkout
-            </Button>
+            <button
+                  onClick={checkoutHandler}
+                  className="w-full my-4 px-8 py-4 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]"
+                >
+                  Checkout
+                </button>
           </div>
         </div>
       </div>

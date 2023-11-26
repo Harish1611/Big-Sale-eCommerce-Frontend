@@ -47,10 +47,16 @@ export default function Checkout() {
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
+
+          const circleStyle = {
+            color: index < step ? '#4caf50' : '#e0e0e0', 
+            
+          };
+
           
           return (
             <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+              <StepLabel {...labelProps} StepIconProps={{ style: circleStyle }}>{label}</StepLabel>
             </Step>
           );
         })}

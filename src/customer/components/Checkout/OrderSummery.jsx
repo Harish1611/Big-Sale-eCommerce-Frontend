@@ -10,31 +10,28 @@ const OrderSummery = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-const orderId = searchParams.get("order_id");
-const dispatch=useDispatch();
-  const jwt=localStorage.getItem("jwt");
-  const {order}=useSelector(state=>state)
+  const orderId = searchParams.get("order_id");
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt");
+  const { order } = useSelector((state) => state);
 
-console.log("orderId ", order)
+  console.log("orderId ", order);
 
-useEffect(()=>{
-  
-  dispatch(getOrderById(orderId))
-},[orderId])
-
-
+  useEffect(() => {
+    dispatch(getOrderById(orderId));
+  }, [orderId]);
 
   return (
     <div className="space-y-5">
-        <div className="p-5 shadow-lg rounded-md border ">
-            <AddressCard address={order.order?.shippingAddress}/>
-        </div>
+      <div className="p-5 shadow-lg rounded-md border ">
+        <AddressCard address={order.order?.shippingAddress} />
+      </div>
       <div className="lg:grid grid-cols-3 relative justify-between">
         <div className="lg:col-span-2 ">
           <div className=" space-y-3">
             {order.order?.orderItems.map((item) => (
               <>
-                <CartItem item={item} showButton={false}/>
+                <CartItem item={item} showButton={false} />
               </>
             ))}
           </div>
@@ -47,12 +44,16 @@ useEffect(()=>{
             <div className="space-y-3  mb-10">
               <div className="flex justify-between pt-3 text-black">
                 <span>Price ({order.order?.totalItem} item)</span>
-                <span><span>₹{order.order?.totalPrice}</span>
- </span>
+                <span>
+                  <span>₹{order.order?.totalPrice}</span>
+                </span>
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Discount</span>
-                <span className="text-green-600"> -₹{order.order?.discounte}</span>
+                <span className="text-green-600">
+                  {" "}
+                  -₹{order.order?.discounte}
+                </span>
               </div>
               <div className="flex justify-between pt-3 ">
                 <span>Delivary Charge</span>
@@ -60,16 +61,14 @@ useEffect(()=>{
               </div>
               <div className="flex justify-between pt-3 font-bold ">
                 <span>Total Amount</span>
-                <span className="text-green-600 ">₹{order.order?.totalDiscountedPrice}</span>
+                <span className="text-green-600 ">
+                  ₹{order.order?.totalDiscountedPrice}
+                </span>
               </div>
             </div>
-            <Button
-              variant="contained"
-              type="submit"
-              sx={{ padding: ".8rem 2rem", marginTop: "2rem", width: "100%" }}
-            >
-              Payment
-            </Button>
+            <button className="w-full my-4 px-8 py-4 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]">
+              Payment{" "}
+            </button>
           </div>
         </div>
       </div>
