@@ -18,26 +18,26 @@ const HomeCategory = () => {
         <div  className=" bg-white z-20 flex justify-center pb-6">
         <hr className="text-[#EBBB0D] bg-[#EBBB0D] w-20 h-[2px] mb-6"></hr> 
         </div>
-      <Grid container spacing={0}>
-        <Grid item sm={12} md={4} spacing={0} className=" bg-white z-10">
+      <Grid container spacing={0} className="bg-[#F5F0E7]">
+        <Grid item sm={12} md={4} spacing={0} >
           <img
             src={Men}
             onClick={() => navigate("/Men/Clothing/t-shirt")}
-            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer "
+            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer rounded-xl hover:rounded-3xl "
           />
         </Grid>
         <Grid item sm={12} md={4} spacing={0}>
           <img
             src={Women}
             onClick={() => navigate("/Women/Clothing/women_dress")}
-            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer"
+            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer rounded-xl hover:rounded-3xl"
           />
         </Grid>
         <Grid item sm={12} md={4} spacing={0}>
           <img
             src={Kids}
             onClick={() => navigate("/Kids/Clothing/kids_dress")}
-            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer "
+            className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer rounded-xl hover:rounded-3xl "
           />
         </Grid>
       </Grid>
