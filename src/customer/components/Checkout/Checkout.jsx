@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DeliveryAddressForm from './DeliveryAddressForm';
 import OrderSummery from './OrderSummery';
+import { useEffect } from 'react';
 
 const steps = ['Login', 'Add Delivery Address', 'Order Summery', 'Payment'];
 
@@ -18,7 +19,9 @@ export default function Checkout() {
   const location = useLocation();
   const querySearch = new URLSearchParams(location.search);
   const navigate = useNavigate()
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const step = querySearch.get("step");
 
 

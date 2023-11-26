@@ -14,6 +14,10 @@ const Cart = () => {
   console.log("cart ",cart)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     dispatch(getCart(jwt));
   }, [cart.updateCartItem, cart.deleteCartItem, jwt]);
 

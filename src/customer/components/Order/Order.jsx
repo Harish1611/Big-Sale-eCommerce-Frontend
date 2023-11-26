@@ -17,6 +17,10 @@ const Order = () => {
   const {order}=useSelector(store=>store);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     dispatch(getOrderHistory({ jwt }));
   }, [jwt]);
 
