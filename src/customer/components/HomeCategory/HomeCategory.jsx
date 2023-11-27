@@ -36,7 +36,7 @@ const HomeCategory = () => {
         <Grid item sm={12} md={4} spacing={0}>
           <img
             src={Kids}
-            onClick={() => navigate("/Kids/Clothing/kids_dress")}
+            onClick={() => navigate("/Kids/Clothing/kids_shirt")}
             className="w-full transition ease-in-out delay-50 hover:translate-y-1 hover:scale-105 hover:duration-1000 z-0 cursor-pointer rounded-xl hover:rounded-3xl "
           />
         </Grid>

@@ -14,19 +14,19 @@ export const SecondaryCarouselData = [
   },
   {
     image: img2,
-    path: "/women/clothing/lengha_choli",
+    path: "/men/clothing/t-shirt",
   },
   {
     image: img3,
-    path: "/women/clothing/lengha_choli",
+    path: "men/accessories/shoes",
   },
   {
     image: img4,
-    path: "/women/clothing/lengha_choli",
+    path: "/men/clothing/shirt",
   },
   {
     image: img5,
-    path: "/women/clothing/lengha_choli",
+    path: "/men/clothing/t-shirt",
   },
 ];
 

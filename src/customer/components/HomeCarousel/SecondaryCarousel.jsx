@@ -2,16 +2,19 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { SecondaryCarouselData } from "./SecondaryCarouselData";
+import { Link } from "react-router-dom";
 
 const SecondaryCarousel = () => {
   const items = SecondaryCarouselData.map((item) => (
-    <img
-    className="cursor-pointer h-[25rem] object-left  sm:h-full"
-    style={{ width: "100%", objectFit: "cover" }}
-      role="presentation"
-      src={item.image}
-      alt=""
-    />
+    <Link to={item.path}>
+      <img
+        className="cursor-pointer h-[25rem] object-left  sm:h-full"
+        style={{ width: "100%", objectFit: "cover" }}
+        role="presentation"
+        src={item.image}
+        alt=""
+      />
+    </Link>
   ));
   return (
     <AliceCarousel

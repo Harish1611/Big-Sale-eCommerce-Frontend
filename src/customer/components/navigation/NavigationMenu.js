@@ -139,8 +139,8 @@ export const navigation = {
             id: 'clothing',
             name: 'Clothing',
             items: [
-              { name: 'Shirt', id: 'shirt' },
-              { name: 'Kids Jeans', id: 'kids-jeans' },
+              { name: 'Shirt', id: 'kids_shirt' },
+              { name: 'Kids Jeans', id: 'kids_jeans' },
               { name: 'Sweaters', id: '#' },
               { name: 'T-Shirts', id: 't-shirt' },
               { name: 'Jackets', id: '#' },
