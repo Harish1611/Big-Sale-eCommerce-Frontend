@@ -3,6 +3,12 @@ import img2 from "../../../assets/secondarySlider/2nd-2.avif";
 import img3 from "../../../assets/secondarySlider/2nd-3.avif";
 import img4 from "../../../assets/secondarySlider/2nd-4.avif";
 import img5 from "../../../assets/secondarySlider/2nd-5.avif";
+import image1 from '../../../assets/mobileSlider/secondary/img1.avif';
+import image2 from '../../../assets/mobileSlider/secondary/img2.avif';
+import image3 from '../../../assets/mobileSlider/secondary/img3.jpg';
+import image4 from '../../../assets/mobileSlider/secondary/img4.avif';
+import image5 from '../../../assets/mobileSlider/secondary/img5.avif';
+
 
 
 
@@ -28,5 +34,24 @@ export const SecondaryCarouselData = [
     image: img5,
     path: "/men/clothing/t-shirt",
   },
+];
+
+export const SecondaryCarouselDataMobile = [
+  {
+    image: image1,
+    path: "/women/clothing/top",
+  },
+  {
+    image: image2,
+    path: "/men/clothing/lengha_choli",
+  },
+  {
+    image: image3,
+    path: "men/accessories/t-shirt",
+  },
+  {
+    image: image4,
+    path: "/men/clothing/women_dress",
+  }
 ];
 

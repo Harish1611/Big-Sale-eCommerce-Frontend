@@ -81,7 +81,7 @@ export default function Navigation() {
   };
 
   return (
-    <div className="bg-white pb-10">
+    <div className="bg-white ">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>

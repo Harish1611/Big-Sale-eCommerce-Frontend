@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const HomeCategory = () => {
   const navigate = useNavigate();
   return (
-    <div className=" bg-white z-20 pb-32">
+    <div className=" bg-white z-20 pb-0 sm:pb-32">
          <div  className=" bg-white z-20 flex justify-center py-4">
             <h2  className=" text-[#0859A9] text-2xl font-serif	"> Shope By Category</h2>
            
