@@ -6,7 +6,7 @@ import "./HomeCollectionSection.css";
 const HomeCollectionSection = ({ section, data }) => {
   const responsive = {
     0: {
-      items: 1,
+      items: 2,
       itemsFit: "contain",
     },
     568: {
