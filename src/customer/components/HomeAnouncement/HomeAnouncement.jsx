@@ -21,18 +21,18 @@ const HomeAnouncement = () => {
           />
         </div>
         <div className="p-8">
-          <div className="uppercase tracking-wide text-4xl sm:text-6xl sm:leading-[4rem]		 text-black font-bold">
-            Explore Wide <br></br> Range of<br></br> Collections
+          <div className="uppercase  tracking-wide text-2xl sm:text-6xl sm:leading-[4rem]		 text-black font-bold">
+            Explore Wide <br className=" hidden sm:block"/> Range of<br /> Collections
           </div>
-          <p className="block mt-1 text-lg pt-6 leading-tight font-medium text-black hover:underline">
+          <p className="block mt-1 text-lg pt-1 sm:pt-6 leading-tight font-medium text-black hover:underline">
             Incredible Quality & Comfort
           </p>
-          <p className="mt-2 text-slate-500 pb-6">
+          <p className="mt-1 sm:mt-2 text-slate-500 text-sm sm:text-md pb-6">
             Our team put together a great group of treading and retro sheo
             collection. If you are looking for something that can take your
             style to next level? We have a list of shoes to do just that.
           </p>
-          <button onClick={()=>navigate('/men/footware/shoes')} className="text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 hover:bg-blue-700  px-6 py-2 rounded	shadow-lg shadow-indigo-500/40 hover:shadow-blue-500/50">
+          <button onClick={()=>navigate('/men/footware/shoes')} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300  text-white bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900   px-6 py-2 rounded	shadow-lg shadow-indigo-500/40 hover:shadow-blue-500/50">
             Buy Now
           </button>
         </div>
