@@ -76,6 +76,7 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     label="First Name"
                     fullWidth
                     autoComplete="given-name"
+                    color="info"
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -86,6 +87,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     label="Last Name"
                     fullWidth
                     autoComplete="given-name"
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -98,6 +101,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     autoComplete="shipping address"
                     multiline
                     rows={4}
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -108,6 +113,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     label="City"
                     fullWidth
                     autoComplete="shipping address-level2"
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -117,6 +124,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     name="state"
                     label="State/Province/Region"
                     fullWidth
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -127,6 +136,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     label="Zip / Postal code"
                     fullWidth
                     autoComplete="shipping postal-code"
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -137,6 +148,8 @@ const DeliveryAddressForm = ({ handleNext }) => {
                     label="Phone Number"
                     fullWidth
                     autoComplete="tel"
+                    color="info"
+
                   />
                 </Grid>
                 <Grid item xs={12}>
