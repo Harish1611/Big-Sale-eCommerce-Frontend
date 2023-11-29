@@ -220,6 +220,7 @@ export default function Navigation() {
                       <Link
                         to={page.id}
                         className="-m-2 block p-2 font-medium text-gray-900"
+                        onClick={() => setOpen(false)}
                       >
                         {page.name}
                       </Link>
