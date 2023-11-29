@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CYCLIC_BACKEND = 'https://aggressive-windbreaker-lamb.cyclic.app/'
+const CYCLIC_BACKEND = 'https://big-sale-ecom.onrender.com/'
 
 const LOCALHOST='http://localhost:5454'
 
