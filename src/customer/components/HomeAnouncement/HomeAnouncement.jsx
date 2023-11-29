@@ -11,7 +11,7 @@ const HomeAnouncement = () => {
   }, []);
   
   return (
-    <div className="w-full mx-auto sm:px-36 sm:py-24 bg-gray-100 overflow-hidden ">
+    <div className="w-full mx-auto sm:px-36 sm:py-24 border-t-4 sm:border-none border-black bg-gray-100 overflow-hidden ">
       <div className="md:flex">
         <div className="md:shrink-0">
           <img

@@ -296,8 +296,8 @@ export default function Product() {
         </Transition.Root>
 
         <main className="mx-auto max-w-full px-4 sm:px-6 lg:px-14">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-gray-900">
+          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-8 sm:pt-14">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
               New Arrivals
             </h1>
 
@@ -372,8 +372,9 @@ export default function Product() {
 
             <div className="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-5">
               {/* Filters */}
-              <div>
-                <div className="py-10 flex justify-between items-center">
+              <div className="hidden sm:block">
+              
+                <div className="py-10 flex  justify-between items-center">
                   <h1 className="text-lg opacity-50 font-bold"> Filters</h1>
                   <FilterIcon />
                 </div>
@@ -506,7 +507,7 @@ export default function Product() {
                 </form>
               </div>
               {/* Product grid */}
-              <div className="lg:col-span-4 lg:pl-10 w-full">
+              <div className="lg:col-span-4 lg:pl-10 p-0 w-full">
                 <div className="flex flex-wrap justify-center lg:justify-start bg-white py-5">
                   {products.products?.content?.map((item) => (
                     <ProductCard product={item} />
@@ -518,7 +519,7 @@ export default function Product() {
          
         {/* pagination section */}
         <section className="w-full px-[3.6rem]">
-          <div className="mx-auto px-4 py-5 flex justify-center shadow-lg border rounded-md">
+          <div className="mx-auto px-4 py-1 sm:py-5 flex justify-center ">
             <Pagination
               count={products.products?.totalPages}
               color="primary"
