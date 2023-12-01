@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, TextField } from "@mui/material";
 import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
 import SupportAgentRoundedIcon from "@mui/icons-material/SupportAgentRounded";
 import AlternateEmailRoundedIcon from '@mui/icons-material/AlternateEmailRounded';
+import {api} from '../config/apiConfig';
+
+const ADMIN_EMAIL = process.env.REACT_APP_ADMIN_EMAIL;
+
 
 const Contact = () => {
 
-  const submissionHandler = () => {
+  const [formData, setFormData] = useState({
+    firstName:'',
+    lastName:'',
+    email:'',
+    phone:'',
+    to: ADMIN_EMAIL,
+    subject: 'New Form Submission from Big Sale',
+    message: '',
+  });
 
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const submissionHandler = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const response = await api.post('api/send-email', formData);
+      console.log(response);
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+
+
   return (
     <div className=" bg-gray-100">
       <Grid container className="px-5 py-14 sm:px-12 sm:py-24">
@@ -70,6 +97,7 @@ const Contact = () => {
               fullWidth
               autoComplete="given-name"
               color="info"
+              onChange={handleChange}
             />
           </Grid>
 
@@ -82,6 +110,8 @@ const Contact = () => {
               fullWidth
               autoComplete="given-name"
               color="info"
+              onChange={handleChange}
+
 
             />
           </Grid>
@@ -95,6 +125,8 @@ const Contact = () => {
               fullWidth
               autoComplete="email"
               color="info"
+              onChange={handleChange}
+
 
             />
           </Grid>
@@ -108,6 +140,8 @@ const Contact = () => {
               fullWidth
               autoComplete="tel"
               color="info"
+              onChange={handleChange}
+
 
             />
           </Grid>
@@ -121,6 +155,8 @@ const Contact = () => {
               rows={4}
               fullWidth
               color="info"
+              onChange={handleChange}
+
 
             />
           </Grid>
