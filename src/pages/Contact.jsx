@@ -4,9 +4,11 @@ import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
 import SupportAgentRoundedIcon from "@mui/icons-material/SupportAgentRounded";
 import AlternateEmailRoundedIcon from '@mui/icons-material/AlternateEmailRounded';
 import {api} from '../config/apiConfig';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const ADMIN_EMAIL = process.env.REACT_APP_ADMIN_EMAIL;
-
 
 const Contact = () => {
 
@@ -24,14 +26,28 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const toastifyPopup = (response) => {
+
+    if(response.status === 200){
+      toast("Message Sent")
+    }
+    else{
+      toast("something went wrong!")
+    }
+  }
+
   const submissionHandler = async (e) => {
     e.preventDefault();
     console.log(formData);
     try {
       const response = await api.post('api/send-email', formData);
       console.log(response);
+      
+      toastifyPopup(response);
     } catch (error) {
       console.error('Error:', error.message);
+      toastifyPopup(error);
+
     }
   };
 
@@ -174,6 +190,7 @@ const Contact = () => {
           </div>
         </Grid>
       </Grid>
+      <ToastContainer/>
     </div>
   );
 };
