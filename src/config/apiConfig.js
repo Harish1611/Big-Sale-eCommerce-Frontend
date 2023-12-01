@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const RENDER_BACKEND = 'https://big-sale-ecom.onrender.com/'
+const RENDER_BACKEND = 'https://big-sale-ecomm.onrender.com'
 
 const LOCALHOST='http://localhost:5454'
 
