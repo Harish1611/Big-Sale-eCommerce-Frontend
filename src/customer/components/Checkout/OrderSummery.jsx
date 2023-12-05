@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderById } from "../../../state/Order/Action";
+import { createPayment } from "../../../state/Payment/Action";
 
 const OrderSummery = () => {
   const navigate = useNavigate();
@@ -21,6 +22,11 @@ const OrderSummery = () => {
     dispatch(getOrderById(orderId));
   }, [orderId]);
 
+  const handleCreatePayment=()=>{
+    const data={orderId:order.order?._id,jwt}
+    dispatch(createPayment(data))
+  }
+    
   return (
     <div className="space-y-5">
       <div className="p-5 shadow-lg rounded-md border ">
@@ -66,8 +72,8 @@ const OrderSummery = () => {
                 </span>
               </div>
             </div>
-            <button className="w-full my-4 px-8 py-4 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]">
-              Payment{" "}
+            <button onClick={handleCreatePayment} className="w-full my-4 px-8 py-4 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]">
+              Payment
             </button>
           </div>
         </div>
