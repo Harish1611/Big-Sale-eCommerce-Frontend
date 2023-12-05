@@ -9,6 +9,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findProductById } from "../../../state/Product/Action";
 import { addItemToCart } from "../../../state/Cart/Action";
+import AuthModal from "../../auth/AuthModal";
+
+
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -71,16 +74,34 @@ export default function ProductDetails() {
   const dispatch = useDispatch();
   const { products } = useSelector((store) => store);
   const jwt = localStorage.getItem("jwt");
+  const { auth } = useSelector((store) => store);
+  const [open, setOpen] = useState(false);
+  const [openAuthModal, setOpenAuthModal] = useState(false);
 
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleOpen = () => {
+    setOpenAuthModal(true);
+  };
+  const handleClose = () => {
+    setOpenAuthModal(false);
+  };
+
+
   const addToCartHandler = () => {
+
+    
+
     const data = { productId, size: selectedSize.name };
     console.log(data)
     dispatch(addItemToCart({ data, jwt }));
     navigate("/cart");
+
+   
+    
   };
   
   useEffect(() => {
@@ -325,7 +346,8 @@ export default function ProductDetails() {
           </h1>
           <div className="border p-5">
             <Grid container spacing={7}>
-              <Grid item xs={7}>
+
+              <Grid item lg={7} xs={12}>
                 <div className="space-y-5">
                   {[1, 1, 1].map((item) => (
                     <ProductReviewCard />
@@ -333,7 +355,7 @@ export default function ProductDetails() {
                 </div>
               </Grid>
 
-              <Grid item xs={5}>
+              <Grid item lg={5} xs={12}>
                 <h1 className="text-xl font-semibold pb-2"> Product Rating</h1>
                 <div className="flex items-center space-x-3">
                   <Rating value={4.6} precision={0.5} readOnly />
@@ -427,6 +449,8 @@ export default function ProductDetails() {
           </div>
         </section>
       </div>
+      <AuthModal handleClose={handleClose} open={openAuthModal} />
+
     </div>
   );
 }

@@ -522,7 +522,7 @@ export default function Product() {
           <div className="mx-auto px-4 py-1 sm:py-5 flex justify-center ">
             <Pagination
               count={products.products?.totalPages}
-              color="primary"
+              color="info"
               className=""
               onChange={handlePaginationChange}
             />

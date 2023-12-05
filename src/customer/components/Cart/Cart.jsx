@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCart } from "../../../state/Cart/Action";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
-import { Height } from "@mui/icons-material";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -28,7 +27,7 @@ const Cart = () => {
   return (
     <div>
       {cart.cartItems.length > 0 ? (
-        <div className="lg:grid grid-cols-3 lg:px-16 relative">
+        <div className="lg:grid grid-cols-3 lg:px-16 relative pt-8">
           <div className=" col-span-2">
             {cart.cart?.cartItems.map((item) => (
               <CartItem item={item} />
@@ -77,13 +76,14 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div className=" py-36 text-center">
+        <div className=" py-24 text-center">
         <div className="flex justify-center pt-10">
          <ProductionQuantityLimitsIcon sx={{ color: "#0859a9", fontSize:"35px" }} /> <h2 className="text-2xl text-gray-600 font-serif pl-4"> Your cart is empty </h2>
         </div>
         <button onClick={() => navigate("/women/clothing/women_dress")} className=" my-8 px-8 py-3 text-white border rounded-md bg-[#02376C] hover:bg-[#0859a9]">
               Shop Now
             </button>
+            <div className=" mt-20" > <h3 className="text-gray-500 bg-gray-100 border mx- rounded-md p-4 px-14 inline"> Please login to track your cart items</h3> </div>
         </div>
       )}
     </div>
